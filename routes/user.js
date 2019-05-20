@@ -11,7 +11,7 @@ const router = express.Router()
 
 // GET @ Dashboard
 router.get('/dashboard', (req, res) => {
-    if (req.session.user) {
+    // if (req.session.user) {
         res.render('dashboard', {
             status: {
                 success: true,
@@ -19,11 +19,11 @@ router.get('/dashboard', (req, res) => {
                 title: req.session.user.fname + ' ' + req.session.user.lname
             }
         })
-    }
-    else {
-        // res.redirect('/login')
-        // To the OTP API by Shiven
-    }
+    // }
+    // else {
+    //     res.redirect('/login')
+    //     To the OTP API by Shiven
+    // }
 })
 
 // GET @ Register
