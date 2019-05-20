@@ -16,7 +16,7 @@ router.get('/dashboard', (req, res) => {
             status: {
                 success: true,
                 code: 200,
-                title: req.session.user.fname + ' ' + req.session.user.lname
+                title: 'Dashboard'
             }
         })
     // }

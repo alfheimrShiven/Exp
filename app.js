@@ -15,9 +15,7 @@ const session = require('express-session')
 
 //importing the routes(endpoints)
 var indexRoute = require('./routes/index');
-var usersRoute = require('./routes/users');
 var verifyRoute = require('./routes/verify');
-var sampleRoute = require('./routes/sample');
 const quote = require('./routes/quote')
 const user = require('./routes/user')
 
@@ -30,6 +28,8 @@ mongoose.connection.once('open', () => {
 }).on('error', function(error) {
   console.log(error)
 })
+
+var app = express();
 
 // Body parser middleware
 app.use(bodyParser.json())
@@ -64,8 +64,6 @@ app.use(expressValidator({
     }
 }))
 
-var app = express();
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -79,7 +77,6 @@ app.use(express.static(path.join(__dirname, 'public'))); // serving the static f
 app.use(cors());
 
 app.use('/', indexRoute);
-app.use('/users', usersRoute); 
 app.use('/verify', verifyRoute);
 app.use('/user', user)
 app.use('/quote', quote)
