@@ -1,0 +1,76 @@
+
+<html>
+
+<head>
+<h1>Welcome to PI </h1>
+   
+</head>
+
+<body>
+    <div id='getPhone'>
+        <input type="number" id="phone"></input>
+        <button id="sendNo">Get code!</button>
+    </div>
+
+    <form action='/verify/code' method='post'>
+        <label for="otp">OTP:</label> <input type="number" name="otp" value=''>
+            <button>Verify</button>
+    </form>
+
+
+<script>
+        document.getElementById("sendNo").addEventListener("click", function(){
+            const phoneno= document.getElementById("phone").value;
+            console.log("This is the phone no:" + phoneno);
+            var phoneJson = {"phoneNo": phoneno};
+
+            // sending a req to get the OTP
+            fetch('/verify', {
+                method: 'POST',
+                body: JSON.stringify(phoneJson),
+                headers:{
+                    'Content-Type': 'application/json'
+                }
+            }).then((res) => {
+                console.log("Response from /verify came:", res);
+            }).catch(console.error);
+            });
+        
+      
+           
+            
+
+                // adding an input box & btn for the user to enter the code
+            //     const codeinput=document.createElement("INPUT");
+            //     codeinput.id="codeinputbox";
+            //     document.body.appendChild(codeinput);
+
+            //     const codeSubmitBtn= document.createElement("BUTTON");
+            //     codeSubmitBtn.id="codesubmitbtn";
+            //     codeSubmitBtn.innerHTML= "Proceed";
+            //     document.body.appendChild(codeSubmitBtn);
+                
+            //     // submitting the entered code
+            //     codeSubmitBtn.addEventListener('click', function(){
+            //             // get the entered code
+            //         const inputCode=codeinput.value;
+            //         let codeJson= {
+            //             "phone": phoneno,
+            //             "otp": inputCode
+            //         };
+            //         // Post the code to the server
+            //         fetch('/verify/code',{
+            //             method: 'POST',
+            //             body: JSON.stringify(codeJson),
+            //             headers:{
+            //                 'Content-Type': 'application/json'
+            //             }
+            //         }).then(res=>console.log("Am I verified?", res))
+            //         .catch(console.error)
+            //     });
+            // })
+            // .catch(console.error);
+            // });
+    </script>
+</body>
+</html>
