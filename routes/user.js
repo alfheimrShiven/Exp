@@ -49,7 +49,7 @@ router.post('/exists', (req, res) => {
             res.redirect('/user/profile')
         }
         else {
-            req.session.user = user
+            // req.session.user = user
             res.redirect('/user/dashboard')
         }
     })
@@ -123,7 +123,7 @@ router.post('/profile', (req, res) => {
                 }
             }
             else {
-                req.session.user = newUser;
+                // req.session.user = newUser;
                 res.redirect('/user/dashboard')
             }
         })

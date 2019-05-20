@@ -6,7 +6,7 @@ const router = express.Router()
 // Files
 const QuickQuote = require("../models/quickQuote")
 
-router.get('/quick', (req, res) => {
+router.get('/quick/save', (req, res) => {
     res.render('quickQuoteRequest', {
         status: {
             success: true,
@@ -17,7 +17,7 @@ router.get('/quick', (req, res) => {
 })
 
 router.post('/quick', (req, res) => {
-    if (!req.session.user) {
+    // if (!req.session.user) {
         if (req.body.name && req.body.phone) {
             const msg = []
             if (phone(req.body.phone).length == 0) {
@@ -58,32 +58,32 @@ router.post('/quick', (req, res) => {
                 })
             }
         }
-    }
-    else {
-        const newQuickQuote = new QuickQuote({
-            quickQuoteRequest: req.body.quickQuoteRequest,
-            user: {
-                phone: req.session.user.phone,
-                name: req.session.user.fname + ' ' + req.session.user.lname
-            }
-        })
-        newQuickQuote.save((err, newQuickQuote) => {
-            if (err) {
-                throw err
-            }
-            else {
-                res.send({
-                    status: {
-                        success: true,
-                        code: 201,
-                        msg: [
-                            'Request saved'
-                        ]
-                    }
-                })
-            }
-        })
-    }
+    // }
+    // else {
+    //     const newQuickQuote = new QuickQuote({
+    //         quickQuoteRequest: req.body.quickQuoteRequest,
+    //         user: {
+    //             phone: req.session.user.phone,
+    //             name: req.session.user.fname + ' ' + req.session.user.lname
+    //         }
+    //     })
+    //     newQuickQuote.save((err, newQuickQuote) => {
+    //         if (err) {
+    //             throw err
+    //         }
+    //         else {
+    //             res.send({
+    //                 status: {
+    //                     success: true,
+    //                     code: 201,
+    //                     msg: [
+    //                         'Request saved'
+    //                     ]
+    //                 }
+    //             })
+    //         }
+    //     })
+    // }
 })
 
 module.exports = router;
