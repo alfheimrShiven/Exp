@@ -1,7 +1,7 @@
 // Dependencies
 const express = require('express')
 const postal = require('postcode-validator')
-const phone = require('phone');
+const phone = require('phone')
 
 // Files
 const User = require("../models/users")
@@ -9,21 +9,76 @@ const User = require("../models/users")
 // Initialize router
 const router = express.Router()
 
-// GET @ Dashboard
-router.get('/dashboard/:id', (req, res) => {
-    // if (req.session.user) {
-        res.render('my_policy_db', {
-            status: {
-                success: true,
-                code: 200,
-                title: 'Dashboard'
+// GET @ Edit Profile
+router.get('/edit/:id', (req, res) => {
+    if (req.params.id === req.session.user) {
+        User.findById({ _id: req.params.id }, (err, user) => {
+            if (err) {
+                throw err
+            }
+            else {
+                res.status(200).json({
+                    status: {
+                        success: true,
+                        code: 200,
+                        msg: [
+                            'Edit Profile'
+                        ]
+                    },
+                    data: {
+                        user
+                    }
+                })
             }
         })
-    // }
-    // else {
-    //     res.redirect('/login')
-    //     To the OTP API by Shiven
-    // }
+    }
+    else {
+        res.status(401).json({
+            status: {
+                success: true,
+                code: 401,
+                msg: [
+                    'Login to edit your details'
+                ]
+            }
+        })
+    }
+})
+
+// GET @ Dashboard
+router.get('/dashboard/:id', (req, res) => {
+    if (req.params.id === req.session.user) {
+        User.findById({ _id: req.params.id }, (err, user) => {
+            if (err) {
+                throw err
+            }
+            else {
+                res.status(200).json({
+                    status: {
+                        success: true,
+                        code: 200,
+                        msg: [
+                            'Dashboard'
+                        ]
+                    },
+                    data: {
+                        user
+                    }
+                })
+            }
+        })
+    }
+    else {
+        res.status(401).json({
+            status: {
+                success: false,
+                code: 401,
+                msg: [
+                    'Login'
+                ]
+            }
+        })
+    }
 })
 
 // GET @ Register
@@ -51,6 +106,52 @@ router.post('/exists', (req, res) => {
         }
     }).catch(err=> console.error(err));
 });
+
+// GET @ Edit Profile
+router.post('/edit/:id', (req, res) => {
+    console.log(req.params.i)
+    let newUser = new User({
+        fname: req.body.fname,
+        lname: req.body.lname,
+        dob: req.body.dob,
+        sex: req.body.sex,
+        phone: req.body.phone,
+        mail: req.body.mail,
+        location: {
+            addressLine: req.body.address,
+            city: req.body.city,
+            pin: req.body.pin,
+        },
+    })
+    User.update({ _id: req.params.id }, {
+        fname: req.body.fname,
+        lname: req.body.lname,
+        dob: req.body.dob,
+        sex: req.body.sex,
+        phone: req.body.phone,
+        mail: req.body.mail,
+        location: {
+            addressLine: req.body.address,
+            city: req.body.city,
+            pin: req.body.pin,
+        }
+    }, (err) => {
+        if (err) {
+            throw err
+        }
+        else {
+            res.status(202).json({
+                status: {
+                    success: true,
+                    code: 202,
+                    msg: [
+                        'Updated. Changes might take some time to reflect.'
+                    ]
+                }
+            })
+        }
+    })
+})
 
 // POST @ Register
 router.post('/profilesave', (req, res) => {
@@ -88,7 +189,7 @@ router.post('/profilesave', (req, res) => {
     //     })
     // }
     // else {
-        console.log("User phone:"+ (req.body.phone));
+        console.log("User phone:"+ (req.body.phone))
         let newUser = new User({
             fname: req.body.fname,
             lname: req.body.lname,
@@ -101,7 +202,7 @@ router.post('/profilesave', (req, res) => {
                 city: req.body.city,
                 pin: req.body.pin,
             },
-        });
+        })
 
         newUser.save((err, newUser) => {
             console.log("Inside save callback");
@@ -132,7 +233,8 @@ router.post('/profilesave', (req, res) => {
                 // }
             }
             else {
-                // req.session.user = newUser;
+                console.log(newUser._id)
+                req.session.user = newUser._id;
                 console.log("Redirecting to dashbd");
                 res.render('my_policy_db');
             }
