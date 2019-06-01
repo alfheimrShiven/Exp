@@ -1,0 +1,35 @@
+<svg id="health3" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+  <rect id="Rectangle_2795" data-name="Rectangle 2795" width="100" height="100" rx="50" fill="#ffeee8"/>
+  <g id="Group_25118" data-name="Group 25118" transform="translate(-1695 -5955)">
+    <g id="Rectangle_2819" data-name="Rectangle 2819" transform="translate(1745.15 6012.963) rotate(-37)" fill="none" stroke="#ff6a30" stroke-width="2">
+      <rect width="11" height="26" rx="5" stroke="none"/>
+      <rect x="1" y="1" width="9" height="24" rx="4" fill="none"/>
+    </g>
+    <g id="Ellipse_711" data-name="Ellipse 711" transform="translate(1721 5976)" fill="#ffeee8" stroke="#ff6a30" stroke-width="2">
+      <circle cx="20.5" cy="20.5" r="20.5" stroke="none"/>
+      <circle cx="20.5" cy="20.5" r="19.5" fill="none"/>
+    </g>
+    <g id="Group_25117" data-name="Group 25117">
+      <g id="Rectangle_2820" data-name="Rectangle 2820" transform="translate(1727 5989)" fill="#ffeee8" stroke="#ff6a30" stroke-width="1">
+        <rect width="6" height="11" rx="3" stroke="none"/>
+        <rect x="0.5" y="0.5" width="5" height="10" rx="2.5" fill="none"/>
+      </g>
+      <g id="Rectangle_2821" data-name="Rectangle 2821" transform="translate(1748.5 5983.5) rotate(90)" fill="#ffeee8" stroke="#ff6a30" stroke-width="1">
+        <rect width="6" height="11" rx="3" stroke="none"/>
+        <rect x="0.5" y="0.5" width="5" height="10" rx="2.5" fill="none"/>
+      </g>
+      <g id="Rectangle_2824" data-name="Rectangle 2824" transform="translate(1748.5 5993.5) rotate(90)" fill="#ffeee8" stroke="#ff6a30" stroke-width="1">
+        <rect width="6" height="11" rx="3" stroke="none"/>
+        <rect x="0.5" y="0.5" width="5" height="10" rx="2.5" fill="none"/>
+      </g>
+      <g id="Rectangle_2822" data-name="Rectangle 2822" transform="matrix(-0.438, 0.899, -0.899, -0.438, 1743.258, 6006.215)" fill="#ffeee8" stroke="#ff6a30" stroke-width="1">
+        <rect width="6" height="11" rx="3" stroke="none"/>
+        <rect x="0.5" y="0.5" width="5" height="10" rx="2.5" fill="none"/>
+      </g>
+      <g id="Rectangle_2823" data-name="Rectangle 2823" transform="translate(1750.632 5993.386) rotate(16)" fill="#ffeee8" stroke="#ff6a30" stroke-width="1">
+        <rect width="6" height="11" rx="3" stroke="none"/>
+        <rect x="0.5" y="0.5" width="5" height="10" rx="2.5" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+<svg id="health2" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+  <path id="Path_11616" data-name="Path 11616" d="M50,0A50,50,0,1,1,0,50,50,50,0,0,1,50,0Z" fill="#f8e9ff"/>
+  <g id="illness-on-bed" transform="translate(22 26.443)">
+    <g id="Group_25116" data-name="Group 25116" transform="translate(0 5.557)">
+      <circle id="Ellipse_710" data-name="Ellipse 710" cx="3.905" cy="3.905" r="3.905" transform="translate(14.112 3.773)" fill="none" stroke="#ce81f0" stroke-width="1"/>
+      <path id="Path_11837" data-name="Path 11837" d="M16.365,10.87a3.194,3.194,0,0,0-3.352,3.186v3.679H34.285a.789.789,0,0,0,.491-1.406C32.459,14.482,27.063,11.412,16.365,10.87Z" transform="translate(9.971 -1.489)" fill="none" stroke="#ce81f0" stroke-width="1"/>
+      <path id="Path_11838" data-name="Path 11838" d="M15.784,15.987A2.139,2.139,0,0,0,14.108,13.9L6.946,12.313a1.22,1.22,0,0,0-1.484,1.192v3.027H15.784Z" transform="translate(4.185 -0.402)" fill="none" stroke="#ce81f0" stroke-width="1"/>
+      <path id="Path_11839" data-name="Path 11839" d="M53.487,33.179V17.751a2.028,2.028,0,1,0-4.055,0v6.138H6.63V7.588a2.029,2.029,0,1,0-4.059,0V33.179A4.642,4.642,0,1,0,6.63,33.13V29.456h42.8V33.13a4.651,4.651,0,1,0,4.061.049ZM7.261,37.335a2.613,2.613,0,1,1-4.688-1.588v.3a2.029,2.029,0,1,0,4.059,0v-.413A2.6,2.6,0,0,1,7.261,37.335ZM51.41,39.947a2.613,2.613,0,0,1-1.983-4.313v.41a2.028,2.028,0,1,0,4.055,0v-.3a2.612,2.612,0,0,1-2.072,4.2Z" transform="translate(0 -5.557)" fill="none" stroke="#ce81f0" stroke-width="1"/>
+    </g>
+  </g>
+</svg>
