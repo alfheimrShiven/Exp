@@ -1,5 +1,0 @@
-DB = "mongodb+srv://admin:qwerty123456@insurance-rktib.mongodb.net/insurance?retryWrites=true"
-
-PORT = '27015'
-
-SESSION_SECRET = 'HODOR'
