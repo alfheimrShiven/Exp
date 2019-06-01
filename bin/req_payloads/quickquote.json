@@ -1,0 +1,318 @@
+
+
+{  
+   "vehicle":{  
+      "isVehicleNew":false,
+      "idv":0,
+      "mainCode":"1111810407",
+      "licensePlate":"MH011AA1244",
+      "vehicleIdentificationNumber":"",
+      "engineNumber":"",
+      "permitAgency":"MH01",
+      "manufactureDate":"2018-03-01",
+      "initialRegistrationDate":"2018-03-09",
+      "hypothecation":{  
+         "isHypothecation":false,
+         "hypothecationAgency":"",
+         "hypothecationCIty":""
+      }
+   },
+   "previousInsurer":{  
+      "previousInsurerCode":"",
+      "previousInsurerPolicyExpiryDate":"2019-03-09",
+      "claimInLastYear":false,
+      "previousNoClaimBonus":"ZERO",
+      "previousInsurerPolicyNumber":""
+   },
+   "contract":{  
+      "insuranceProductCode":"20101",
+      "startDate":"2019-03-10",
+      "endDate":"2020-03-09",
+      "term":1,
+      "salesChannel":"ABSA",
+      "coverages":{  
+         "baseCover":{  
+            "thirdPartyLiabilityCover":{  
+               "selection":true
+            },
+            "ownDamageCover":{  
+               "selection":true,
+               "plan":"PLAN_C"
+            },
+            "theftCover":{  
+               "selection":false
+            },
+            "fireCover":{  
+               "selection":false
+            }
+         },
+         "addOnCover":{  
+            "partsDepreciationCover":{  
+               "selection":false,
+               "plan":"PLAN_C",
+               "numberOfClaimsCovered":"TWO",
+               "coPay":0
+            },
+            "engineAndGearBoxProtectionCover":{  
+               "selection":false
+            },
+            "consumableCover":{  
+               "selection":false
+            },
+            "breakdownAssistanceCover":{  
+               "selection":false,
+               "plan":"PLAN_C"
+            },
+            "returnToInvoiceCover":{  
+               "selection":false
+            },
+            "tyreProtectCover":{  
+               "selection":false,
+               "tyreType":null
+            }
+         },
+         "additionalCover":{  
+            "otherDriverCover":{  
+               "selection":false
+            },
+            "paUnnamedPersonCover":{  
+               "selection":false,
+               "insuredAmount":0
+            },
+            "paOwnerDriverCover":{  
+               "selection":true,
+               "insuredAmount":1500000.01
+            }
+         },
+         "accessoriesCover":{  
+            "electricalCover":{  
+               "selection":false,
+               "insuredAmount":0
+            },
+            "nonElectricalCover":{  
+               "selection":false,
+               "insuredAmount":0
+            },
+            "cngCover":{  
+               "selection":false,
+               "insuredAmount":0
+            }
+         }
+      },
+      "voluntaryDeductible":"ZERO"
+   },
+   "pinCode":"380004",
+   "enquiryId":"20182013052033",
+   "security":{  
+      "webUserId":"25860711",
+      "password":"digit123"
+   }
+}
+
+
+Response:
+{
+    "idv": 687352,
+    "eligibleNCB": "TWENTY",
+    "voluntaryDeductible": "ZERO",
+    "coveragePremium": {
+        "baseCoverPremium": {
+            "thirdPartyLiabilityCover": {
+                "premium": 2863,
+                "tarifPremium": 0,
+                "selection": true,
+                "insuredAmount": 750000
+            },
+            "ownDamageCover": {
+                "premium": 8076,
+                "tarifPremium": 18053,
+                "selection": true,
+                "insuredAmount": 687352,
+                "plan": "PLAN_C"
+            },
+            "ownDamageCoverWithZeroDep": {
+                "premium": 8076,
+                "tarifPremium": 18053,
+                "selection": true,
+                "insuredAmount": 687352,
+                "plan": "PLAN_C"
+            },
+            "theftCover": {
+                "premium": 0,
+                "tarifPremium": 0,
+                "selection": false,
+                "insuredAmount": 0
+            },
+            "fireCover": {
+                "premium": 0,
+                "tarifPremium": 0,
+                "selection": false,
+                "insuredAmount": 0
+            }
+        },
+        "additionalCoverPremium": {
+            "paOwnerDriverCover": {
+                "premium": 330,
+                "tarifPremium": 0,
+                "selection": true,
+                "insuredAmount": 1500000
+            },
+            "paUnnamedPersonCover": {
+                "premium": 0,
+                "tarifPremium": 0,
+                "selection": false,
+                "insuredAmount": 0
+            },
+            "otherDriverCover": {
+                "premium": 0,
+                "tarifPremium": 0,
+                "selection": false,
+                "insuredAmount": 0
+            },
+            "legalLiabilityCover": {
+                "premium": 0,
+                "tarifPremium": 0,
+                "selection": false,
+                "insuredAmount": 0
+            }
+        },
+        "addOnCoverPremium": {
+            "partsDepreciationCover": {
+                "premium": 3437,
+                "tarifPremium": 0,
+                "selection": true,
+                "insuredAmount": 0,
+                "plan": "PLAN_C",
+                "numberOfClaimsCovered": "TWO",
+                "coPay": 0
+            },
+            "engineAndGearBoxProtectionCover": {
+                "premium": 612,
+                "tarifPremium": 0,
+                "selection": true,
+                "insuredAmount": 0
+            },
+            "consumableCover": {
+                "premium": 359,
+                "tarifPremium": 0,
+                "selection": true,
+                "insuredAmount": 0
+            },
+            "breakdownAssistanceCover": {
+                "premium": 109,
+                "tarifPremium": 0,
+                "selection": true,
+                "insuredAmount": 0,
+                "plan": "PLAN_C"
+            },
+            "onSpotlegalAndFinalAssistanceCover": {
+                "premium": 0,
+                "tarifPremium": 0,
+                "selection": false,
+                "insuredAmount": 0
+            },
+            "returnToInvoiceCover": {
+                "premium": 2049,
+                "tarifPremium": 0,
+                "selection": true,
+                "insuredAmount": 0,
+                "plan": "PLAN_A",
+                "coPay": 0
+            },
+            "tyreProtectCover": {
+                "premium": 178,
+                "tarifPremium": 0,
+                "selection": true,
+                "insuredAmount": 0,
+                "tyreType": "OTHERS"
+            },
+            "rimDamageCover": {
+                "premium": 548,
+                "tarifPremium": 0,
+                "selection": true,
+                "insuredAmount": 0
+            },
+            "dailyConveyanceBenefitP1Cover": {
+                "premium": 0,
+                "tarifPremium": 0,
+                "selection": false,
+                "insuredAmount": 0
+            },
+            "dailyConveyanceBenefitP2Cover": {
+                "premium": 0,
+                "tarifPremium": 0,
+                "selection": false,
+                "insuredAmount": 0
+            },
+            "fuelAdultrationCover": {
+                "premium": 0,
+                "tarifPremium": 0,
+                "selection": false,
+                "insuredAmount": 0
+            },
+            "lossOfPersonalBelongingsCover": {
+                "premium": 0,
+                "tarifPremium": 0,
+                "selection": false,
+                "insuredAmount": 0
+            },
+            "lossOfVehicleKeysCover": {
+                "premium": 0,
+                "tarifPremium": 0,
+                "selection": false,
+                "insuredAmount": 0
+            },
+            "ncbProtectionCover": {
+                "premium": 0,
+                "tarifPremium": 0,
+                "selection": false,
+                "insuredAmount": 0
+            },
+            "breakdownWarrantyCover": {
+                "premium": 0,
+                "tarifPremium": 0,
+                "selection": false,
+                "insuredAmount": 0
+            }
+        },
+        "accessoriesCoverPremium": {
+            "electricalCover": {
+                "premium": 0,
+                "tarifPremium": 0,
+                "selection": false,
+                "insuredAmount": 0
+            },
+            "nonElectricalCover": {
+                "premium": 0,
+                "tarifPremium": 0,
+                "selection": false,
+                "insuredAmount": 0
+            },
+            "cngCover": {
+                "premium": 0,
+                "tarifPremium": 0,
+                "selection": false,
+                "insuredAmount": 0
+            }
+        },
+        "discounts": {
+            "noClaimBonusDiscounts": 2019,
+            "noClaimBonusWithZDDiscounts": 2019,
+            "otherDiscounts": 0
+        }
+    },
+    "totalNetPremium": 18561,
+    "totalGrossPremium": 21904,
+    "serviceTax": {
+        "cgst": 0,
+        "sgst": 0,
+        "igst": 0,
+        "utgst": 0,
+        "totalTax": 3343
+    },
+    "enquiryId": "20182013052033-51023",
+    "error": {
+        "errorCode": 0,
+        "errorMessage": "Success"
+    }
+}

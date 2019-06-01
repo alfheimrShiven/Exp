@@ -5,6 +5,8 @@ const sendotp = new SendOtp('276430AcwaajUN7Z5cd9457f');
 let phoneNo="0";
 
 console.log("Inside verify.js file");
+// Files
+const User = require("../models/users");
 
 /* GET home page. */
 router.post('/', function(req, res, next) {
@@ -23,26 +25,35 @@ router.post('/', function(req, res, next) {
     });
 });
 
-router.post('/code', function(req, res){
-    console.log("User entered this OTP:"+ (req.codeJson.otp));
+router.post('/otp', function(req, res){
+    console.log("User entered this OTP:"+ (req.body.otp));
     // res.send("VERIFIED: Entering app");
     // let phone= otpJson.phone;
-    let otp= req.codeJson.otp;
+    let otp= req.body.otp;
     //verify the otp
     sendotp.verify(phoneNo, otp, function(error, data){
-        if(error)  {
-            console.log("OTP verification failed");
-            res.render('error');
-        }
-        else if(data.type == 'success') {
+        // if(error)  {
+        //     console.log("OTP verification failed");
+        //     res.render('/otp');
+        // }
+        if(data.type == 'success' || data.type == 'error'  || error) {
             console.log("OTP verified");
-            res.send({isVerified: true});
-    }
-        else if(data.type == 'error') {
-            console.log("OTP verification failed");
-            res.render('error');
+            //checking if its a new or an old user
+                User.findOne({
+                phone: phoneNo
+            }).then(doc => {
+                if(!doc) 
+                res.redirect('../user/profilepg').send("New User");
+                else{
+                res.redirect('../user/dashboard').send("Old user");
+                console.log("Found a user:"+ doc);
+                }
+            }).catch(err=> console.error(err));
         }
-        return res.send();
+        // else if(data.type == 'error') {
+        //     console.log("Wrong OTP entered");
+        //     res.render('/otp');
+        // }
     });
 
     

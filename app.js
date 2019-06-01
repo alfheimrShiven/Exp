@@ -11,6 +11,8 @@ const bodyParser = require('body-parser')
 const expressValidator = require('express-validator')
 const flash = require('connect-flash')
 const mongoose = require('mongoose')
+const MongoClient = require('mongodb').MongoClient
+, assert = require('assert');
 const session = require('express-session')
 
 //importing the routes(endpoints)
@@ -20,15 +22,23 @@ const quote = require('./routes/quote')
 const user = require('./routes/user')
 
 // Database connection
-const db = mongoose.connect(process.env.DB, {
+const uri= 'mongodb+srv://admin:n4W1T1HFVUaM3v56@insurance-rktib.mongodb.net/test?retryWrites=true';
+const dbName = "insurance";
+// Through Mongoose
+let db = mongoose.connect(uri, {
   useNewUrlParser: true
-})
-mongoose.connection.once('open', () => {
-  console.log('Connection successfully made')
-}).on('error', function(error) {
-  console.log(error)
-})
+}).then(console.log("Connected using Mongoose"))
+.catch(err => console.log("Mongoose Error came"+ err));
 
+// Through MongoClient
+const client=new MongoClient(uri);
+let dbclient = null;
+client.connect((err) =>{
+  assert.equal(null, err);
+  console.log("Connected through MongoClient");
+  dbclient = client.db(dbName);
+  
+})
 var app = express();
 
 // Body parser middleware
@@ -42,7 +52,7 @@ app.use(flash())
 
 // Session
 app.use(session({
-    secret: process.env.SESSION_SECRET,
+    secret: 'HODOR',
     resave: false,
     saveUninitialized: true
 }))
@@ -73,13 +83,39 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public'))); // serving the static files
+app.use(express.static(__dirname, { dotfiles: 'allow' } ));
+
 app.use(cors());
 
 app.use('/', indexRoute);
 app.use('/verify', verifyRoute);
-app.use('/user', user)
-app.use('/quote', quote)
+app.use('/user', user);
+app.use('/quote', quote);
+
+// just playing. trying to crack the MainCode 
+app.post("/getVehicleModels", (req, res) =>{
+  let make = String(req.body.make);
+  let modelArr=[];
+  const vehicle_collection = dbclient.collection("vehicles");
+  vehicle_collection.find({"make": make}).toArray((err, docursor)=>{
+      if(err)
+          console.log("Error while finding manufacturer:"+ err);
+      else{
+          console.log("Got something in the cursor");
+          
+          let i=0;
+          docursor.forEach((element)=>{
+            // avoiding the repeative model entries
+            if(modelArr[i-1] != element.model){
+            modelArr[i] = element.model
+              ++i;
+            }
+          });
+          res.send(modelArr);
+      }
+  });
+  
+});
 
 
 // catch 404 and forward to error handler

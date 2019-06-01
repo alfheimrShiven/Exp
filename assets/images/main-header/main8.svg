@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+  <g id="main8" transform="translate(0 -1)">
+    <g id="Group_24792" data-name="Group 24792" transform="translate(-1593 -3882)">
+      <g id="Group_24774" data-name="Group 24774" transform="translate(0 -2)">
+        <rect id="Rectangle_2796" data-name="Rectangle 2796" width="100" height="100" rx="50" transform="translate(1593 3885)" fill="#e5f7ff"/>
+        <g id="Group_24773" data-name="Group 24773" transform="translate(1614 3911)">
+          <rect id="Rectangle_2799" data-name="Rectangle 2799" width="46" height="31" rx="1" transform="translate(13 17)" fill="none" stroke="#00b0ff" stroke-width="2"/>
+          <path id="Path_11598" data-name="Path 11598" d="M13,31H1a1,1,0,0,1-1-1V2A1,1,0,0,1,1,1H45.015a1,1,0,0,1,1,1V18.069" fill="none" stroke="#00b0ff" stroke-width="2"/>
+          <path id="Path_11599" data-name="Path 11599" d="M.5,8.759H47" fill="none" stroke="#00b0ff" stroke-width="2"/>
+          <path id="Path_11600" data-name="Path 11600" d="M36.5,26.064a8.833,8.833,0,1,0-.077,13.59" fill="#b0e4fc" stroke="#00b0ff" stroke-width="2"/>
+          <circle id="Ellipse_698" data-name="Ellipse 698" cx="8.827" cy="8.827" r="8.827" transform="translate(33.346 24)" fill="#b0e4fc" stroke="#00b0ff" stroke-width="2"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

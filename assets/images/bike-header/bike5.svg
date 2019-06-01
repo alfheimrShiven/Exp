@@ -1,0 +1,17 @@
+<svg id="bike5" xmlns="http://www.w3.org/2000/svg" width="156" height="156" viewBox="0 0 156 156">
+  <g id="Group_25054" data-name="Group 25054" transform="translate(-788 -1811)">
+    <circle id="Ellipse_669" data-name="Ellipse 669" cx="78" cy="78" r="78" transform="translate(788 1811)" fill="#4f8afc"/>
+    <g id="check" transform="translate(823 1836.793)">
+      <g id="Group_25051" data-name="Group 25051" transform="translate(0 11.206)">
+        <g id="Group_25050" data-name="Group 25050" transform="translate(0)">
+          <path id="Path_11825" data-name="Path 11825" d="M79.164,45.545a3.492,3.492,0,0,0-3.492,3.492v3.517A34.344,34.344,0,0,1,41.328,86.878h-.02a34.344,34.344,0,0,1,.019-68.688h.02a34.13,34.13,0,0,1,13.959,2.973,3.492,3.492,0,1,0,2.842-6.379,41.066,41.066,0,0,0-16.8-3.578h-.024A41.328,41.328,0,0,0,12.088,81.74,41.058,41.058,0,0,0,41.3,93.861h.024A41.328,41.328,0,0,0,82.655,52.555V49.037A3.492,3.492,0,0,0,79.164,45.545Z" transform="translate(0 -11.206)" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Group_25053" data-name="Group 25053" transform="translate(26.485 15.011)">
+        <g id="Group_25052" data-name="Group 25052" transform="translate(0 0)">
+          <path id="Path_11826" data-name="Path 11826" d="M215.81,34.769a3.492,3.492,0,0,0-4.938,0l-39.151,39.15-8.882-8.882a3.492,3.492,0,1,0-4.938,4.938l11.351,11.351a3.492,3.492,0,0,0,4.938,0L215.81,39.707A3.492,3.492,0,0,0,215.81,34.769Z" transform="translate(-156.879 -33.746)" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
