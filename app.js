@@ -22,7 +22,7 @@ const quote = require('./routes/quote')
 const user = require('./routes/user')
 
 // Database connection
-const uri= 'mongodb+srv://admin:n4W1T1HFVUaM3v56@insurance-rktib.mongodb.net/test?retryWrites=true';
+const uri= 'mongodb+srv://admin:qwerty123456@insurance-rktib.mongodb.net/insurance?retryWrites=true&w=majority';
 const dbName = "insurance";
 // Through Mongoose
 let db = mongoose.connect(uri, {
@@ -41,6 +41,9 @@ client.connect((err) =>{
 })
 var app = express();
 
+//Global Variables
+let makemodels=[]; // storing model elements with varients 
+let modelvarient=[]; // storing just model varient elements
 // Body parser middleware
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
@@ -95,7 +98,8 @@ app.use('/quote', quote);
 // just playing. trying to crack the MainCode 
 app.post("/getVehicleModels", (req, res) =>{
   let make = String(req.body.make);
-  let modelArr=[];
+  console.log("User selected manufacturer:"+ make);
+  let modelArr=[]; // return models to user
   const vehicle_collection = dbclient.collection("vehicles");
   vehicle_collection.find({"make": make}).toArray((err, docursor)=>{
       if(err)
@@ -103,19 +107,50 @@ app.post("/getVehicleModels", (req, res) =>{
       else{
           console.log("Got something in the cursor");
           
-          let i=0;
-          docursor.forEach((element)=>{
+          let i=0, m=0;
+          docursor.forEach((modelelement)=>{
+            // storing the models manufactured
+            makemodels[m++]= modelelement; 
             // avoiding the repeative model entries
-            if(modelArr[i-1] != element.model){
-            modelArr[i] = element.model
+            if(modelArr[i-1] != modelelement.model){
+            modelArr[i] = modelelement.model
               ++i;
             }
+            console.log("Stored this model doc:"+ makemodels[m-1]);
           });
           res.send(modelArr);
       }
   });
-  
 });
+
+  app.post("/modelvarient", (req,res)=>{
+      let model = String(req.body.model);
+      console.log("User want varients for this model:"+ model);
+      console.log("Will be one in:"+ makemodels.length);
+      let varients=[];
+      let i=0;
+      makemodels.forEach((modelElement)=>{
+        if(modelElement.model == model){
+          varients[i] = modelElement.varient;
+          modelvarient[i] = modelElement;
+          i++; 
+        }
+        });
+      // res.send(varients);
+      res.json({varients: [varients]});
+  });
+
+  app.post("/maincode", (req,res)=>{
+    let uservarient = req.body.uservarient;
+    modelvarient.forEach((modelvarientElem) =>{
+      if(modelvarientElem.varient == uservarient)
+        res.send(modelvarientElem);
+      else
+        res.send("Cannot get the maincode");
+    });
+  });
+  
+
 
 
 // catch 404 and forward to error handler

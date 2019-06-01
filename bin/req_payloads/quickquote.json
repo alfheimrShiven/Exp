@@ -107,14 +107,11 @@
       "webUserId":"25860711",
       "password":"digit123"
    }
-}
-
-
-Response:
+},
 {
     "idv": 687352,
     "eligibleNCB": "TWENTY",
-    "voluntaryDeductible": "ZERO",
+    "voluntaryDeductible":"ZERO",
     "coveragePremium": {
         "baseCoverPremium": {
             "thirdPartyLiabilityCover": {
