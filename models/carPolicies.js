@@ -1,7 +1,7 @@
 // Dependencies
 const mongoose = require('mongoose')
 
-const carPolicy = new mongoose.Schema({
+const carPolicySchema = new mongoose.Schema({
   purchaseDate: {
     type: Date,
     default: Date.now
@@ -22,7 +22,7 @@ const carPolicy = new mongoose.Schema({
     discountCurrentPolicy: {
       type: Number
     },
-    coveraged: [String],
+    coverages: [String],
     addOns: [String],
     deduct: {
       type: Number
@@ -64,8 +64,8 @@ const carPolicy = new mongoose.Schema({
       }
     },
     user: {
-      phone: {
-        type: Number,
+      id: {
+        type: String,
         required: true
       }
     }

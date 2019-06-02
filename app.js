@@ -20,6 +20,7 @@ var indexRoute = require('./routes/index');
 var verifyRoute = require('./routes/verify');
 const quote = require('./routes/quote')
 const user = require('./routes/user')
+const policy = require('./routes/purchasePolicy')
 
 // Database connection
 const uri= 'mongodb+srv://admin:qwerty123456@insurance-rktib.mongodb.net/insurance?retryWrites=true&w=majority';
@@ -91,6 +92,7 @@ app.use('/', indexRoute);
 app.use('/verify', verifyRoute);
 app.use('/user', user);
 app.use('/quote', quote);
+app.use('/policy', policy)
 
 // just playing. trying to crack the MainCode 
 app.post("/getVehicleModels", (req, res) =>{
