@@ -2,6 +2,10 @@
 const mongoose = require('mongoose')
 
 const carPolicy = new mongoose.Schema({
+  purchaseDate: {
+    type: Date,
+    default: Date.now
+  },
   quoteNumber: {
     type: String,
     unique: true
