@@ -34,6 +34,14 @@ const userSchema = mongoose.Schema({
             type: Number,
         },
     },
+    userPolicies: [{
+        policyID: {
+            type: String
+        },
+        purchaseDate: {
+            type: Date
+        }
+    }],
     isVerified: {
         type: Boolean,
         default: false
