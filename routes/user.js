@@ -69,10 +69,10 @@ router.get('/dashboard/:id', (req, res) => {
         })
     }
     else {
-        res.status(401).json({
+        res.status(200).json({
             status: {
                 success: false,
-                code: 401,
+                code: 200,
                 msg: [
                     'Login'
                 ]
@@ -83,7 +83,7 @@ router.get('/dashboard/:id', (req, res) => {
 
 // GET @ Register
 router.get('/profilepg', (req, res) => {
-    res.render('my_profile_db', {
+    res.status(200).json({
         status: {
             success: true,
             code: 200,
@@ -140,10 +140,10 @@ router.post('/edit/:id', (req, res) => {
             throw err
         }
         else {
-            res.status(202).json({
+            res.status(20).json({
                 status: {
                     success: true,
-                    code: 202,
+                    code: 20,
                     msg: [
                         'Updated. Changes might take some time to reflect.'
                     ]
@@ -221,12 +221,12 @@ router.post('/profilesave', (req, res) => {
                 // }
                 // else {
                     console.log("Error while saving:"+ err);
-                    res.send({
+                    res.status(500).json({
                         status: {
                             success: false,
-                            code: 409,
+                            code: 500,
                             msg: [
-                                'User already exists'
+                                err
                             ]
                         }
                     });
@@ -236,7 +236,15 @@ router.post('/profilesave', (req, res) => {
                 console.log(newUser._id)
                 req.session.user = newUser._id;
                 console.log("Redirecting to dashbd");
-                res.render('my_policy_db');
+                res.status(201).json({
+                    status: {
+                        success: false,
+                        code: 201,
+                        msg: [
+                            'User created'
+                        ]
+                    }
+                })
             }
         });
     });
